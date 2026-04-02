@@ -1,0 +1,134 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Open Sans",
+      "role": "body"
+    },
+    {
+      "family": "Arial",
+      "role": "unknown"
+    }
+  ],
+  "colors": {
+    "primary": "#005850",
+    "accent": "#005850",
+    "background": "#FFFFFF",
+    "textPrimary": "#005850",
+    "link": "#005850"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Open Sans",
+      "heading": "Open Sans"
+    },
+    "fontStacks": {
+      "heading": [
+        "grad",
+        "serif"
+      ],
+      "body": [
+        "Open Sans",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Open Sans",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "32px",
+      "h2": "16px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#2E2E2E",
+      "borderColor": "#737373",
+      "borderRadius": "16px",
+      "borderRadiusCorners": {
+        "topLeft": "16px",
+        "topRight": "16px",
+        "bottomRight": "16px",
+        "bottomLeft": "16px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#FFFFFF",
+      "textColor": "#2E2E2E",
+      "borderColor": "#005850",
+      "borderRadius": "8px",
+      "borderRadiusCorners": {
+        "topLeft": "8px",
+        "topRight": "8px",
+        "bottomRight": "8px",
+        "bottomLeft": "8px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#EFEFEF",
+      "textColor": "#2E2E2E",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": null,
+    "ogImage": "File saved at: attached_assets/ogImage.png"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 7,
+      "text": "Learn More",
+      "reasoning": "Button #0 has a border color matching the brand's accent color (#005850), making it stand out as a primary CTA. The text 'Learn More' is action-oriented, suggesting a primary call-to-action."
+    },
+    "secondary": {
+      "index": 0,
+      "text": "VerifyCelebrate",
+      "reasoning": "Button #3 has a different background color (#EFEFEF) from the primary button and serves as a secondary action with the text 'VerifyCelebrate'."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "professionals and learners in technology and AI fields"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": false,
+      "llmSucceeded": false,
+      "finalSource": "none"
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
