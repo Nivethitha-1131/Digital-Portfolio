@@ -38,7 +38,7 @@ export default function Home() {
       icon: Globe,
       num: "03",
       title: "Web & Deployment",
-      desc: "From Figma to Vercel — React frontends, Git version control, and production-ready deployments that actually ship.",
+      desc: "From Ideas to Vercel — React frontends, Git version control, and production-ready deployments that actually ship.",
     },
     {
       icon: Database,
@@ -272,7 +272,11 @@ export default function Home() {
               marginBottom: "2.5rem",
             }}
           >
-            Growing up in Coimbatore, I found my calling at the intersection of logic and imagination. Today, as a B.Tech student in AI & Data Science at SNS College of Engineering — carrying a 9.36 CGPA — I build things that think.
+            I don't just learn AI—I build with it.
+            <br /><br />
+            From automation workflows to intelligent applications, I focus on creating systems that are practical, scalable, and ready for real use. My approach is simple: solve real problems, ship fast, and keep improving.
+            <br /><br />
+            Tech is evolving fast and I'm building right with it.
           </motion.p>
           <motion.div
             {...fadeUp}
@@ -550,6 +554,8 @@ export default function Home() {
           >
             <a
               href="mailto:nivethitha1131@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="liquid-glass-strong"
               style={{
                 borderRadius: "9999px",
