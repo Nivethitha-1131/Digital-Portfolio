@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+    "dev": "pnpm -r --parallel run dev",
+    "typecheck": "pnpm -r --filter \"./api\" --filter \"./frontend\" --if-present run typecheck"
   },
   "private": true,
   "devDependencies": {

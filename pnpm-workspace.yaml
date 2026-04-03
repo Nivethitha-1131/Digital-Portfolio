@@ -1,7 +1,7 @@
 packages:
-  - artifacts/*
+  - api
+  - frontend
   - lib/*
-  - lib/integrations/*
   - scripts
 
 autoInstallPeers: false
