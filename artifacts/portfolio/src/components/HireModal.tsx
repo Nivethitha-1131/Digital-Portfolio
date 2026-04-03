@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Github, Linkedin, Mail, Code2, Terminal } from "lucide-react";
+import GalaxyCanvas from "@/components/GalaxyCanvas";
 
 interface HireModalProps {
   open: boolean;
@@ -59,6 +60,16 @@ export default function HireModal({ open, onClose }: HireModalProps) {
     <AnimatePresence>
       {open && (
         <>
+          {/* Galaxy canvas — full screen behind everything */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ position: "fixed", inset: 0, zIndex: 199, pointerEvents: "none" }}
+          >
+            <GalaxyCanvas />
+          </motion.div>
+
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -68,10 +79,10 @@ export default function HireModal({ open, onClose }: HireModalProps) {
             style={{
               position: "fixed",
               inset: 0,
-              background: "rgba(0,0,0,0.80)",
+              background: "rgba(0,0,0,0.55)",
               zIndex: 200,
-              backdropFilter: "blur(14px)",
-              WebkitBackdropFilter: "blur(14px)",
+              backdropFilter: "blur(6px)",
+              WebkitBackdropFilter: "blur(6px)",
             }}
           />
 

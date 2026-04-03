@@ -507,9 +507,17 @@ export default function Home() {
           paddingBottom: "10rem",
           paddingLeft: "1.5rem",
           paddingRight: "1.5rem",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <div style={{ maxWidth: "48rem", margin: "0 auto", textAlign: "center" }}>
+        {/* Hero-style particle canvas for the CTA section */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+          <ParticleCanvas />
+          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
+        </div>
+
+        <div style={{ maxWidth: "48rem", margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <span className="section-badge">Open Channel</span>
           </motion.div>

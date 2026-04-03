@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
+import RingCanvas from "@/components/RingCanvas";
 
 const certifications = [
   {
@@ -94,37 +95,14 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <div style={{ background: "black", minHeight: "100vh", paddingTop: "8rem", paddingBottom: "4rem" }}>
+    <div style={{ background: "black", minHeight: "100vh", paddingTop: "8rem", paddingBottom: "4rem", position: "relative", overflow: "hidden" }}>
       <div className="grain-overlay" />
 
-      {/* Background blobs */}
-      <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none", overflow: "hidden" }}>
-        <div
-          className="cloud-drift-1"
-          style={{
-            position: "absolute",
-            top: "5%",
-            left: "-15%",
-            width: "60vw",
-            height: "60vw",
-            borderRadius: "50%",
-            background: "radial-gradient(ellipse, rgba(255,255,255,0.02) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-        <div
-          className="cloud-drift-2"
-          style={{
-            position: "absolute",
-            bottom: "0%",
-            right: "-10%",
-            width: "45vw",
-            height: "45vw",
-            borderRadius: "50%",
-            background: "radial-gradient(ellipse, rgba(255,255,255,0.018) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
+      {/* Rotating ring canvas — fixed full-screen background */}
+      <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+        <RingCanvas />
+        {/* Dark veil to keep text readable */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)" }} />
       </div>
 
       <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 1.5rem", position: "relative", zIndex: 1 }}>
