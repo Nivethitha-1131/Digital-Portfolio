@@ -1,7 +1,6 @@
 import express, { type Express } from "express";
 import cors from "cors";
 import router from "./routes";
-import { logger } from "./lib/logger";
 
 const app: Express = express();
 
@@ -11,5 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
+
+// Health check for Vercel
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
 
 export default app;

@@ -1,8 +1,7 @@
 import app from "./app";
-import { logger } from "./lib/logger";
 import type { IncomingMessage, ServerResponse } from "http";
 
-// For Vercel Serverless Functions - handler signature
+// For Vercel Serverless Functions
 export default async function handler(
   req: IncomingMessage,
   res: ServerResponse,
@@ -10,7 +9,7 @@ export default async function handler(
   try {
     return app(req, res);
   } catch (error) {
-    logger.error({ error }, "Handler error");
+    console.error("Handler error:", error);
     res.statusCode = 500;
     res.end("Internal Server Error");
   }
@@ -27,10 +26,10 @@ if (rawPort && process.env.NODE_ENV !== "production") {
 
   app.listen(port, (err: any) => {
     if (err) {
-      logger.error({ err }, "Error listening on port");
+      console.error("Error listening on port:", err);
       process.exit(1);
     }
 
-    logger.info({ port }, "Server listening");
+    console.log("Server listening on port:", port);
   });
 }
