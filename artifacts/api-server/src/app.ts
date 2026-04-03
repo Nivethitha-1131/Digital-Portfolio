@@ -1,6 +1,5 @@
 import express, { type Express } from "express";
 import cors from "cors";
-import router from "./routes";
 
 const app: Express = express();
 
@@ -9,11 +8,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api", router);
+// Routes
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 // Health check for Vercel
-app.get("/health", (_req, res) => {
+app.get("/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
+// Root endpoint
+app.get("/", (req, res) => {
+  res.json({ message: "API Server is running" });
 });
 
 export default app;
