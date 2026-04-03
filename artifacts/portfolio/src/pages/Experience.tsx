@@ -1,198 +1,217 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Briefcase, GraduationCap, Award } from "lucide-react";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-};
+import { ArrowUpRight, Briefcase } from "lucide-react";
+import NebulaCanvas from "@/components/NebulaCanvas";
 
 const experiences = [
   {
-    type: "education",
-    title: "B.Tech in AI & Data Science",
+    type: "PART-TIME",
+    title: "Junior Software Developer",
+    org: "EduSpine",
+    period: "Jan 2026 — Present",
+    isCurrent: true,
+    location: null,
+    description: "Building AI-powered educational tools and full-stack applications integrating generative AI models into real learning workflows.",
+    tags: ["Artificial Intelligence (AI)", "Generative AI Tools", "Full-Stack Development"],
+  },
+  {
+    type: "INTERNSHIP",
+    title: "Full-Stack Developer Intern",
+    org: "OneDot Communications Ltd",
+    period: "Jul 2025 — Jan 2026",
+    isCurrent: false,
+    location: "Coimbatore, Tamil Nadu, India · Remote",
+    description: "Developed and maintained full-stack web applications, managed client portfolios, and integrated generative AI tools into production pipelines.",
+    tags: ["Portfolio Management", "Git", "GitHub", "Generative AI Tools", "TypeScript", "Vite"],
+  },
+  {
+    type: "EDUCATION",
+    title: "B.Tech — AI & Data Science",
     org: "SNS College of Engineering",
-    period: "2022 – 2026",
+    period: "2022 — 2026",
+    isCurrent: false,
     location: "Coimbatore, India",
-    description: "Pursuing a Bachelor's in Artificial Intelligence & Data Science with a 9.36 CGPA. Deep focus on machine learning, neural networks, and full-stack development.",
-    tags: ["AI", "Data Science", "Python", "Machine Learning"],
-  },
-  {
-    type: "work",
-    title: "AI & Full-Stack Development",
-    org: "Independent Projects",
-    period: "2023 – Present",
-    location: "Remote",
-    description: "Built multiple end-to-end AI-powered applications integrating OpenAI, Supabase, and React. Developed tools that solve real-world problems using generative AI.",
-    tags: ["OpenAI", "React", "Supabase", "Python"],
-  },
-  {
-    type: "achievement",
-    title: "Technical Skill Builder",
-    org: "HackerRank & Exercism",
-    period: "2024 – Present",
-    location: "Online",
-    description: "Actively solving problems in Data Structures, Algorithms, and Python. Earned verified certifications in Problem Solving (Basic) from HackerRank.",
-    tags: ["Problem Solving", "Algorithms", "Python"],
+    description: "CGPA: 9.36. Deep focus on machine learning, neural networks, data structures, and full-stack development with AI integrations.",
+    tags: ["AI", "Data Science", "Python", "Machine Learning", "Neural Networks"],
   },
 ];
 
 export default function Experience() {
   return (
-    <div style={{ background: "black", minHeight: "100vh", paddingTop: "8rem", paddingBottom: "4rem" }}>
-      {/* Grain overlay */}
+    <div
+      style={{
+        background: "black",
+        minHeight: "100vh",
+        paddingTop: "8rem",
+        paddingBottom: "5rem",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Purple nebula particle canvas — full page background */}
+      <NebulaCanvas />
+
+      {/* Overlay to keep text readable */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      />
+
       <div className="grain-overlay" />
 
-      {/* Background blobs */}
-      <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none", overflow: "hidden" }}>
-        <div
-          className="cloud-drift-1"
-          style={{
-            position: "absolute",
-            top: "10%",
-            right: "-10%",
-            width: "50vw",
-            height: "50vw",
-            borderRadius: "50%",
-            background: "radial-gradient(ellipse, rgba(255,255,255,0.025) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-        <div
-          className="cloud-drift-2"
-          style={{
-            position: "absolute",
-            bottom: "10%",
-            left: "-10%",
-            width: "40vw",
-            height: "40vw",
-            borderRadius: "50%",
-            background: "radial-gradient(ellipse, rgba(255,255,255,0.02) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-      </div>
+      <div style={{ maxWidth: "56rem", margin: "0 auto", padding: "0 1.5rem", position: "relative", zIndex: 2 }}>
 
-      <div style={{ maxWidth: "56rem", margin: "0 auto", padding: "0 1.5rem", position: "relative", zIndex: 1 }}>
         {/* Header */}
-        <motion.div {...fadeUp} style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <span className="section-badge">Journey</span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          style={{ textAlign: "center", marginBottom: "4rem" }}
+        >
+          <span className="section-badge">Experience</span>
           <h1
             className="section-heading"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginTop: "0.75rem", marginBottom: "1rem" }}
+            style={{
+              fontSize: "clamp(2.75rem, 7vw, 5rem)",
+              marginTop: "0.75rem",
+              marginBottom: 0,
+            }}
           >
-            Where I've been,<br />what I've built.
+            Where I've built<br />real things.
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 300, fontSize: "1rem", maxWidth: "30rem", margin: "0 auto", lineHeight: 1.7 }}>
-            A timeline of education, projects, and continuous learning in the world of AI & full-stack development.
-          </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div style={{ position: "relative" }}>
-          {/* Vertical line */}
-          <div
-            style={{
-              position: "absolute",
-              left: "1.5rem",
-              top: 0,
-              bottom: 0,
-              width: "1px",
-              background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 80%, transparent)",
-            }}
-          />
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            {experiences.map((exp, i) => {
-              const Icon = exp.type === "education" ? GraduationCap : exp.type === "work" ? Briefcase : Award;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ display: "flex", gap: "2rem", paddingLeft: "0.5rem" }}
-                >
-                  {/* Icon dot */}
-                  <div style={{ flexShrink: 0, marginTop: "0.25rem" }}>
-                    <div
+        {/* Experience cards */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                borderRadius: "1rem",
+                padding: "1.5rem 1.75rem",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                backdropFilter: "blur(30px)",
+                WebkitBackdropFilter: "blur(30px)",
+                boxShadow: "0 1px 0 rgba(255,255,255,0.06) inset, 0 16px 48px rgba(0,0,0,0.5)",
+                transition: "transform 0.25s ease, box-shadow 0.25s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)";
+                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 1px 0 rgba(255,255,255,0.08) inset, 0 24px 60px rgba(0,0,0,0.6)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 1px 0 rgba(255,255,255,0.06) inset, 0 16px 48px rgba(0,0,0,0.5)";
+              }}
+            >
+              {/* Top row: type + period + current badge */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.625rem", flexWrap: "wrap", gap: "0.5rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <Briefcase size={13} style={{ color: "rgba(255,255,255,0.35)" }} />
+                  <span
+                    style={{
+                      fontSize: "0.7rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.08em",
+                      color: "rgba(255,255,255,0.45)",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {exp.type}
+                  </span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
+                  <span style={{ fontSize: "0.825rem", color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>
+                    {exp.period}
+                  </span>
+                  {exp.isCurrent && (
+                    <span
                       style={{
-                        width: "2rem",
-                        height: "2rem",
-                        borderRadius: "50%",
-                        background: "rgba(255,255,255,0.08)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        fontSize: "0.7rem",
+                        fontWeight: 500,
+                        color: "white",
+                        background: "rgba(255,255,255,0.1)",
+                        border: "1px solid rgba(255,255,255,0.18)",
+                        borderRadius: "9999px",
+                        padding: "0.15rem 0.625rem",
                       }}
                     >
-                      <Icon size={14} />
-                    </div>
-                  </div>
+                      Current
+                    </span>
+                  )}
+                </div>
+              </div>
 
-                  {/* Card */}
-                  <div
+              {/* Title */}
+              <h3
+                style={{
+                  fontFamily: "Barlow, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "white",
+                  marginBottom: "0.25rem",
+                  lineHeight: 1.3,
+                }}
+              >
+                {exp.title}
+              </h3>
+
+              {/* Org */}
+              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.875rem", fontWeight: 300, margin: 0, marginBottom: exp.location ? "0.2rem" : "0.875rem" }}>
+                {exp.org}
+              </p>
+
+              {/* Location */}
+              {exp.location && (
+                <p style={{ color: "rgba(255,255,255,0.38)", fontSize: "0.8rem", fontWeight: 300, marginBottom: "0.875rem" }}>
+                  📍 {exp.location}
+                </p>
+              )}
+
+              {/* Description */}
+              {exp.description && (
+                <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 300, fontSize: "0.875rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+                  {exp.description}
+                </p>
+              )}
+
+              {/* Tags */}
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                {exp.tags.map((tag) => (
+                  <span
+                    key={tag}
                     style={{
-                      flex: 1,
-                      borderRadius: "1.25rem",
-                      padding: "1.5rem",
-                      background: "linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-                      backdropFilter: "blur(40px)",
-                      border: "1px solid rgba(255,255,255,0.09)",
-                      boxShadow: "0 1px 0 rgba(255,255,255,0.08) inset, 0 20px 60px rgba(0,0,0,0.4)",
-                      transition: "transform 0.3s ease",
+                      fontSize: "0.775rem",
+                      color: "rgba(255,255,255,0.65)",
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: "9999px",
+                      padding: "0.25rem 0.75rem",
+                      fontWeight: 400,
                     }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.transform = "translateY(0)")}
                   >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem", flexWrap: "wrap", gap: "0.5rem" }}>
-                      <div>
-                        <h3 style={{ fontFamily: "Barlow, sans-serif", fontWeight: 500, fontSize: "1.05rem", marginBottom: "0.25rem", color: "white" }}>
-                          {exp.title}
-                        </h3>
-                        <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.875rem", fontWeight: 300, margin: 0 }}>
-                          {exp.org} · {exp.location}
-                        </p>
-                      </div>
-                      <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", fontWeight: 300, whiteSpace: "nowrap" }}>
-                        {exp.period}
-                      </span>
-                    </div>
-                    <p style={{ color: "rgba(255,255,255,0.65)", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-                      {exp.description}
-                    </p>
-                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-                      {exp.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "rgba(255,255,255,0.6)",
-                            background: "rgba(255,255,255,0.06)",
-                            border: "1px solid rgba(255,255,255,0.1)",
-                            borderRadius: "9999px",
-                            padding: "0.2rem 0.7rem",
-                            fontWeight: 400,
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* CTA */}
         <motion.div
-          {...fadeUp}
-          style={{ textAlign: "center", marginTop: "4rem" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.7 }}
+          style={{ textAlign: "center", marginTop: "3.5rem" }}
         >
           <a
             href="mailto:nivethitha1131@gmail.com"
@@ -211,7 +230,7 @@ export default function Experience() {
               backdropFilter: "blur(8px)",
               transition: "background 0.2s",
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.12)")}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.13)")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.07)")}
           >
             Let's Work Together <ArrowUpRight size={16} />
