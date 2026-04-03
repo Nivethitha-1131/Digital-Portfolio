@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import NebulaCanvas from "@/components/NebulaCanvas";
 
 const experiences = [
@@ -206,36 +206,6 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
-          style={{ textAlign: "center", marginTop: "3.5rem" }}
-        >
-          <a
-            href="mailto:nivethitha1131@gmail.com"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.375rem",
-              borderRadius: "9999px",
-              padding: "0.75rem 1.75rem",
-              color: "white",
-              textDecoration: "none",
-              fontFamily: "Barlow, sans-serif",
-              fontSize: "0.9rem",
-              background: "rgba(255,255,255,0.07)",
-              border: "1px solid rgba(255,255,255,0.15)",
-              backdropFilter: "blur(8px)",
-              transition: "background 0.2s",
-            }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.13)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.07)")}
-          >
-            Let's Work Together <ArrowUpRight size={16} />
-          </a>
-        </motion.div>
       </div>
     </div>
   );

@@ -156,11 +156,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8 }}
-              style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               <a
-                href="#skills"
-                onClick={(e) => { e.preventDefault(); document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" }); }}
+                href="/resume.pdf"
+                download="Nivethitha_Ramesh_Resume.pdf"
                 className="liquid-glass-strong"
                 style={{
                   borderRadius: "9999px",
@@ -172,24 +172,6 @@ export default function Home() {
                   gap: "0.375rem",
                   fontSize: "0.9rem",
                   fontFamily: "Barlow, sans-serif",
-                }}
-              >
-                View My Work <ArrowUpRight size={16} />
-              </a>
-              <a
-                href="/resume.pdf"
-                download="Nivethitha_Ramesh_Resume.pdf"
-                style={{
-                  borderRadius: "9999px",
-                  padding: "0.75rem 1.25rem",
-                  color: "rgba(255,255,255,0.6)",
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.375rem",
-                  fontSize: "0.9rem",
-                  fontFamily: "Barlow, sans-serif",
-                  border: "1px solid rgba(255,255,255,0.12)",
                 }}
               >
                 Download Resume <Download size={16} />
@@ -550,10 +532,10 @@ export default function Home() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}
+            style={{ display: "flex", justifyContent: "center" }}
           >
             <a
-              href="mailto:nivethitha1131@gmail.com"
+              href="https://github.com/Nivethitha-1131"
               target="_blank"
               rel="noopener noreferrer"
               className="liquid-glass-strong"
@@ -566,26 +548,6 @@ export default function Home() {
                 alignItems: "center",
                 gap: "0.375rem",
                 fontFamily: "Barlow, sans-serif",
-                fontSize: "0.9rem",
-              }}
-            >
-              Get in Touch <ArrowUpRight size={16} />
-            </a>
-            <a
-              href="https://github.com/Nivethitha-1131"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="liquid-glass"
-              style={{
-                borderRadius: "9999px",
-                padding: "0.875rem 2rem",
-                color: "rgba(255,255,255,0.80)",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.375rem",
-                fontFamily: "Barlow, sans-serif",
-                fontWeight: 300,
                 fontSize: "0.9rem",
               }}
             >

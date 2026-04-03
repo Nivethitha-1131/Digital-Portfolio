@@ -127,8 +127,8 @@ export default function ParticleTitle() {
         const nearFactor = dist < REPEL_RADIUS ? (1 - dist / REPEL_RADIUS) : 0;
         if (nearFactor > 0) {
           const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-          glow.addColorStop(0, `rgba(255,255,255,${nearFactor * 0.4})`);
-          glow.addColorStop(1, "rgba(255,255,255,0)");
+          glow.addColorStop(0, `rgba(18,8,28,${nearFactor * 0.3})`);
+          glow.addColorStop(1, "rgba(18,8,28,0)");
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
           ctx.fillStyle = glow;
@@ -137,7 +137,7 @@ export default function ParticleTitle() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.opacity})`;
+        ctx.fillStyle = `rgba(18,8,28,${p.opacity * 0.82})`;
         ctx.fill();
       });
 
