@@ -148,7 +148,8 @@ export default function Home() {
                 lineHeight: 1.6,
               }}
             >
-              Python. React. OpenAI. Supabase. Every tool a brushstroke — every system a universe built from scratch.
+              <span style={{ display: "block", fontSize: "1.15rem", fontWeight: 500, letterSpacing: "0.02em", color: "rgba(10,5,18,0.88)" }}>Think → Design → Deliver</span>
+              <span style={{ display: "block", marginTop: "0.25rem", color: "rgba(10,5,18,0.72)", fontWeight: 400 }}>End-to-end. No loose ends.</span>
             </motion.p>
 
             {/* CTAs */}
@@ -497,13 +498,30 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        {/* Hero-style particle canvas for the CTA section */}
-        <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-          <ParticleCanvas />
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
-        </div>
+        {/* Cinematic video background — same as hero */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "100%",
+            height: "100%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 0,
+            objectFit: "cover",
+            maskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 80%)",
+          }}
+        >
+          <source src="https://res.cloudinary.com/dgqsqiucd/video/upload/v1773990554/14967453_1920_1080_30fps_nrgzdo.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.30)", zIndex: 1, pointerEvents: "none" }} />
 
-        <div style={{ maxWidth: "48rem", margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: "48rem", margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
           <motion.div {...fadeUp}>
             <span className="section-badge">Open Channel</span>
           </motion.div>
