@@ -1,6 +1,12 @@
 {
   "version": 2,
   "buildCommand": "pnpm install && pnpm -C frontend run build",
-  "outputDirectory": "frontend/dist/public",
-  "framework": "vite"
+  "outputDirectory": "frontend/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
