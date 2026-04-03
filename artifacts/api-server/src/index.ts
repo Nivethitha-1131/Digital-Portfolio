@@ -1,13 +1,24 @@
 import app from "./app";
 import { logger } from "./lib/logger";
+import type { IncomingMessage, ServerResponse } from "http";
 
+// For Vercel Serverless Functions - handler signature
+export default async function handler(
+  req: IncomingMessage,
+  res: ServerResponse,
+) {
+  try {
+    return app(req, res);
+  } catch (error) {
+    logger.error({ error }, "Handler error");
+    res.statusCode = 500;
+    res.end("Internal Server Error");
+  }
+}
+
+// For local development
 const rawPort = process.env["PORT"];
-
-// For Vercel Serverless Functions, we export the app directly
-export default app;
-
-// Only start server locally or if PORT is explicitly set
-if (rawPort) {
+if (rawPort && process.env.NODE_ENV !== "production") {
   const port = Number(rawPort);
 
   if (Number.isNaN(port) || port <= 0) {
