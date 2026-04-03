@@ -14,25 +14,27 @@ if (Number.isNaN(port) || port <= 0) {
 
 const basePath = process.env.BASE_PATH || "/";
 
+// Only load Replit plugins in development
+const isProduction = process.env.NODE_ENV === "production";
+const isReplit = process.env.REPL_ID !== undefined;
+
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer({
-              root: path.resolve(import.meta.dirname, ".."),
-            }),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
+    // Only load Replit-specific plugins in Replit environment
+    ...(isProduction || !isReplit ? [] : [
+      runtimeErrorOverlay(),
+      await import("@replit/vite-plugin-cartographer").then((m) =>
+        m.cartographer({
+          root: path.resolve(import.meta.dirname, ".."),
+        }),
+      ),
+      await import("@replit/vite-plugin-dev-banner").then((m) =>
+        m.devBanner(),
+      ),
+    ]),
   ],
   resolve: {
     alias: {
