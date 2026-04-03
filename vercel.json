@@ -1,9 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && pnpm install && pnpm run build",
-  "outputDirectory": "frontend/dist",
-  "framework": "vite",
-  "env": {
-    "FRONTEND_PORT": "3000"
-  }
+  "buildCommand": "pnpm install && pnpm -C frontend run build",
+  "outputDirectory": "frontend/dist/public",
+  "framework": "vite"
 }
