@@ -1,6 +1,5 @@
 packages:
   - frontend
-  - lib/*
   - scripts
 
 autoInstallPeers: false

@@ -1,0 +1,12 @@
+lib/
+scripts/
+attached_assets/
+node_modules/
+.git/
+.local/
+.cache/
+.canvas/
+VERCEL_MIGRATION.md
+replit.md
+.replit
+.replitignore
