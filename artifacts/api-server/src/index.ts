@@ -1,5 +1,26 @@
-import app from "./app";
+import express from "express";
+import cors from "cors";
 import type { IncomingMessage, ServerResponse } from "http";
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.get("/", (req, res) => {
+  res.json({ message: "API Server is running" });
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
 
 // For Vercel Serverless Functions
 export default async function handler(
