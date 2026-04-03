@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, cubicBezier } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Download, Code2, Brain, Globe, Database, ChevronRight } from "lucide-react";
 import ParticleCanvas from "@/components/ParticleCanvas";
@@ -9,7 +9,7 @@ function useScrollFadeUp() {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.8, ease: cubicBezier(0.22, 1, 0.36, 1) },
   };
 }
 
@@ -238,7 +238,7 @@ export default function Home() {
           </motion.div>
           <motion.h2
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             className="section-heading"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginBottom: "1.5rem" }}
           >
@@ -246,7 +246,7 @@ export default function Home() {
           </motion.h2>
           <motion.p
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             style={{
               color: "rgba(255,255,255,0.72)",
               fontWeight: 300,
@@ -263,7 +263,7 @@ export default function Home() {
           </motion.p>
           <motion.div
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.3, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             style={{
               display: "flex",
               justifyContent: "center",
@@ -271,7 +271,8 @@ export default function Home() {
               flexWrap: "wrap",
             }}
           >
-            {["IBM", "Google", "AWS", "HackerRank", "SNS College", "EduSpine"].map((partner) => (
+            {["Relentless", "Unstoppable", "Focused", "Disciplined", "Resilient", "Driven", "Fearless", "Consistent", "Unbreakable", "Limitless", "Committed", "Persistent", "Evolving", "Bold", "Hungry"]
+.map((partner) => (
               <span
                 key={partner}
                 style={{
@@ -327,7 +328,7 @@ export default function Home() {
             </motion.div>
             <motion.h2
               {...fadeUp}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
               className="section-heading"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginBottom: "1.5rem" }}
             >
@@ -335,7 +336,7 @@ export default function Home() {
             </motion.h2>
             <motion.p
               {...fadeUp}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.2, ease: cubicBezier(0.22, 1, 0.36, 1) }}
               style={{
                 color: "rgba(255,255,255,0.70)",
                 fontWeight: 300,
@@ -392,7 +393,7 @@ export default function Home() {
             </motion.div>
             <motion.h2
               {...fadeUp}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
               className="section-heading"
               style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
@@ -416,7 +417,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: i * 0.1, duration: 0.8, ease: cubicBezier(0.22, 1, 0.36, 1) }}
                   whileHover={{ y: -6 }}
                   className="glass-card-hover"
                   style={{
@@ -527,7 +528,7 @@ export default function Home() {
           </motion.div>
           <motion.h2
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             className="section-heading"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginBottom: "1rem" }}
           >
@@ -535,7 +536,7 @@ export default function Home() {
           </motion.h2>
           <motion.p
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             style={{
               color: "rgba(255,255,255,0.70)",
               fontWeight: 300,
@@ -549,7 +550,7 @@ export default function Home() {
           </motion.p>
           <motion.div
             {...fadeUp}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.3, ease: cubicBezier(0.22, 1, 0.36, 1) }}
             style={{ display: "flex", justifyContent: "center" }}
           >
             <a
@@ -592,31 +593,7 @@ export default function Home() {
             <span style={{ fontWeight: 300, fontSize: "0.75rem", color: "rgba(255,255,255,0.38)" }}>
               © 2026 Nivethitha Ramesh. All rights reserved.
             </span>
-            <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-              {[
-                { label: "LinkedIn", url: "https://www.linkedin.com/in/nivethitha-ramesh/" },
-                { label: "GitHub", url: "https://github.com/Nivethitha-1131" },
-                { label: "Mail", url: "mailto:nivethitha1131@gmail.com" },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.url}
-                  target={link.url.startsWith("mailto") ? "_self" : "_blank"}
-                  rel="noopener noreferrer"
-                  style={{
-                    fontWeight: 300,
-                    fontSize: "0.75rem",
-                    color: "rgba(255,255,255,0.38)",
-                    textDecoration: "none",
-                    transition: "color 0.2s",
-                  }}
-                  onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.70)")}
-                  onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.38)")}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+           
           </div>
         </div>
       </footer>
